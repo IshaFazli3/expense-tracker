@@ -1,13 +1,12 @@
 
-<style>
+
   @import url('https://fonts.googleapis.com/css2?family=Lumanosimo&family=Playfair+Display:ital@1&family=Poppins:ital,wght@0,300;0,400;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-</style>
 
 
 :root {
   --bg-color: white;
   --text-color: black;
-  --main-color: teal;
+  --main-color: blueviolet;
 }
 * {
   padding: 0;
@@ -32,3 +31,32 @@ main {
   padding: 1rem;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
+header {
+  background-color: blueviolet;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  display: fllex;
+  flex-wrap: wrap;
+}
+header div {
+  padding: 5px;
+
+}
+header div:first-child {
+  flex-basis: 100%;
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+header div:nth-child(n+2) {
+  flex-basis: 50%;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+header h5 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
