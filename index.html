@@ -24,8 +24,15 @@
       </div>
     </header>
     <section>
+
+      <h3>Transactions</h3>
+      <ul id="transactionList"></ul>
+      <div id="status"></div>
+    </section>
+
+    <section>
       <h3>Add Transactions</h3>
-      <form id="transactionForm"></form>
+      <form id="transactionForm">
       <div>
         <label for="name">Name</label>
         <input type="text" name="name" required>
@@ -37,7 +44,7 @@
       </div>
       <div>
         <label for="data">Date</label>
-        <input type="data" name="date" required>
+        <input type="date" name="date" required>
       </div>
       <button type="submit">Submit</button>
     </form>
