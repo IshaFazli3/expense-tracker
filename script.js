@@ -23,9 +23,15 @@ const transactions = [
 ];
 
 const list = document.getElementById("transactionList");
+const status = document.getElementById("status");
 
 function renderList() {
-  list.innerHTML = "<li>item</li>";
+  list.innerHTML = "";
+
+  if(transactions.length === 0) {
+    status.textContent = "No transactions.";
+    return;
+  }
 
   transactions.forEach((transaction) => {
     const li = document.createElement("li");
