@@ -49,7 +49,10 @@ transactions.forEach(({ id, name, amount, date, type }) => {
   
   <div class="amount ${type}">
   <span>${formatter.format(amount)}</span>
-  </div>`;
+  </div>
+  
+  <div class="action">
+    </div>`;
 
   list.appendChild(li);
 });
