@@ -32,14 +32,21 @@ function renderList() {
     status.textContent = "No transactions.";
     return;
   }
+transactions.forEach(({ name, date, amount }) => {
+  const li = document.createElement("li");
 
-  transactions.forEach((transaction) => {
-    const li = document.createElement("li");
+  li.innerHTML = `
+  <div class="name">
+  <h4>${name}</h4> 
+  <p>${new Date(date).toLocaleDateString()}</p>
+  </div>
+  
+  <div class="amount">
+  <span>${amount}</span>
+  </div>`;
 
-    li.innerHTML = transaction.amount;
+  list.appendChild(li);
+});
 
-    list.appendChild(li);
-  });
 }
-
 renderList();
