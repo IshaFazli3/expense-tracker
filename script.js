@@ -9,18 +9,24 @@ const transactions = [
   {
     id: 2,
     name: 'flowers',
-    amount: 20,
+    amount: -20,
     date: new Date(),
     type: 'expense'
   },
   {
     id: 3,
     name: 'water bottle',
-    amount: 5,
+    amount: -5,
     date: new Date(),
     type: 'expense'
   }
 ];
+
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  signDisplay: "always",
+});
 
 const list = document.getElementById("transactionList");
 const status = document.getElementById("status");
@@ -32,7 +38,7 @@ function renderList() {
     status.textContent = "No transactions.";
     return;
   }
-transactions.forEach(({ name, date, amount }) => {
+transactions.forEach(({ id, name, amount, date, type }) => {
   const li = document.createElement("li");
 
   li.innerHTML = `
@@ -41,8 +47,8 @@ transactions.forEach(({ name, date, amount }) => {
   <p>${new Date(date).toLocaleDateString()}</p>
   </div>
   
-  <div class="amount">
-  <span>${amount}</span>
+  <div class="amount ${type}">
+  <span>${formatter.format(amount)}</span>
   </div>`;
 
   list.appendChild(li);
