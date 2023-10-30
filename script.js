@@ -59,3 +59,8 @@ transactions.forEach(({ id, name, amount, date, type }) => {
 
 }
 renderList();
+
+function deleteTransaction(id) {
+  const index = transactions.findIndex((trx) => trx.id === id);
+  transactions.splice(index, 1);
+}
